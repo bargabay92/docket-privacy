@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docket — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #fbfbfa;
+    --panel: #ffffff;
+    --ink: #1a1a1f;
+    --ink-soft: #52525c;
+    --ink-faint: #8a8a93;
+    --line: #e6e6e9;
+    --accent: #4f46e5;
+    --accent-soft: #eeecfd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121214; --panel: #1a1a1d; --ink: #f0f0f2; --ink-soft: #b8b8c0;
+      --ink-faint: #7d7d86; --line: #2a2a2e; --accent: #9089f5; --accent-soft: #24223a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 56px 24px 100px; }
+  header { margin-bottom: 40px; }
+  .kicker {
+    font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  h1 { font-size: 30px; margin: 0 0 10px; letter-spacing: -0.02em; }
+  .updated { font-size: 13.5px; color: var(--ink-faint); }
+  .lede {
+    font-size: 15.5px; line-height: 1.65; color: var(--ink-soft); margin-top: 20px;
+    padding: 18px 20px; background: var(--accent-soft); border-radius: 12px;
+  }
+  h2 {
+    font-size: 18px; margin: 44px 0 12px; padding-top: 4px;
+    border-top: 1px solid var(--line); padding-top: 20px;
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  p { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 6px; }
+  strong { color: var(--ink); font-weight: 600; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px;
+    background: var(--accent-soft); color: var(--accent); padding: 1px 6px; border-radius: 5px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; }
+  .toc a {
+    font-size: 12.5px; padding: 6px 11px; border-radius: 100px;
+    background: var(--panel); border: 1px solid var(--line); color: var(--ink-soft);
+  }
+  footer {
+    margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--ink-faint);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Docket</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: September 22, 2026</div>
+    <p class="lede">Docket is built so that almost everything happens on your iPhone, not on a server. This page explains exactly what stays local, what's optional and under your control, and the very few things that ever leave your device.</p>
+    <nav class="toc">
+      <a href="#documents">Your documents</a>
+      <a href="#icloud">iCloud sync</a>
+      <a href="#apple-signin">Sign in with Apple</a>
+      <a href="#ai">On-device AI</a>
+      <a href="#camera-photos">Camera &amp; Photos</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#applock">Face ID / App Lock</a>
+      <a href="#web">Web pages you convert</a>
+      <a href="#purchases">Subscriptions</a>
+      <a href="#backups">Backups</a>
+      <a href="#sharing">Sharing &amp; export</a>
+      <a href="#deletion">Deleting your data</a>
+      <a href="#tracking">No tracking</a>
+      <a href="#children">Children</a>
+      <a href="#changes">Changes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <h2 id="documents">Your documents stay on your device by default</h2>
+  <p>Every PDF you scan, convert, or import into Docket is stored locally on your iPhone. Thumbnails, cached search text, and the other small files Docket generates to make the app fast (like OCR text layers and search embeddings) are stored locally alongside it. None of this is uploaded anywhere unless you turn on iCloud sync yourself (see below).</p>
+
+  <h2 id="icloud">iCloud sync is optional, and it's your private storage</h2>
+  <p>If you choose to sign in, Docket can sync your library across your own devices using <strong>your personal iCloud private database</strong> — a storage space tied to your Apple ID that Docket's developer cannot access, view, or download from. This uses Apple's CloudKit framework.</p>
+  <p>Docket only writes into its own private CloudKit container. It never reads your other iCloud data (Photos, iCloud Drive, Mail, etc.), and it never shares your documents with anyone else's account.</p>
+
+  <h2 id="apple-signin">Signing in with Apple</h2>
+  <p>Docket uses <strong>Sign in with Apple</strong> to identify your account for iCloud sync. The first time you sign in, Apple may share your name and email address (or Apple's private relay email, if you chose to hide your email) with Docket — this is used only to show you as signed in and as the identifier for your synced library. Docket does not send this information anywhere beyond your device and your own iCloud account.</p>
+
+  <h2 id="ai">On-device AI features</h2>
+  <p>Docket's AI tools — Ask AI, Suggest a Name, Redact Sensitive Info, and Writing Tools — run <strong>entirely on your device</strong> using Apple's on-device Foundation Models and Apple Intelligence frameworks. Your document's content is never sent to Docket's developer, Apple's servers, or any third party to power these features. If your device doesn't support on-device AI, these features simply aren't available — Docket does not fall back to a cloud AI service.</p>
+
+  <h2 id="camera-photos">Camera and Photo Library access</h2>
+  <p>Docket asks for camera access to scan documents, and photo library access to convert an existing photo or screenshot into a PDF. Both are used only at the moment you choose to scan or pick a photo — Docket does not access your camera or photo library in the background, and captured/selected images are processed and stored the same way as any other document in the app (locally, or synced only if you've turned on iCloud sync).</p>
+
+  <h2 id="calendar">Calendar access</h2>
+  <p>If a PDF you're viewing contains a recognizable date, Docket can offer to create a calendar event from it. This uses Apple's EventKit framework and only writes the one event you explicitly confirm — Docket does not read your existing calendar or its other events.</p>
+
+  <h2 id="applock">Face ID and App Lock</h2>
+  <p>If you turn on App Lock in Settings, Docket uses Face ID (or your device passcode) to require authentication before your library is shown. This authentication happens entirely through Apple's LocalAuthentication framework — Docket never receives your Face ID data itself, only a yes/no confirmation from the operating system.</p>
+
+  <h2 id="web">Web pages you choose to convert</h2>
+  <p>Docket's "Web to PDF" tool is the one feature that makes a network request: when you type in a URL and tap Convert, Docket loads exactly that page (the same way Safari would) in order to save it as a PDF. No other part of Docket makes network requests to fetch or send your content.</p>
+
+  <h2 id="purchases">Subscriptions and purchases</h2>
+  <p>Docket Pro is sold through Apple's App Store using StoreKit. Payment details are handled entirely by Apple — Docket never sees or stores your card information. Docket only receives confirmation of what you've purchased, so it can unlock Pro features on your device.</p>
+
+  <h2 id="backups">Device backups</h2>
+  <p>Because your documents are stored in Docket's normal app storage, they're included in your device's standard iCloud or iTunes/Finder backup the same way any other app's data would be — this is Apple's standard backup behavior, not something Docket configures specially.</p>
+
+  <h2 id="sharing">Sharing and exporting files</h2>
+  <p>When you use Share, Export, or Print from Docket, you're choosing to hand a copy of that file to another app, another person, or your own Files app — at that point, that copy is outside Docket's control, the same as sharing any other document from your phone. Locking a file with a password inside Docket does not retroactively protect copies you already shared before adding that password.</p>
+
+  <h2 id="deletion">Deleting your data</h2>
+  <p>You can delete individual files or your whole library at any time from within Docket — this removes them from your device immediately. If you've signed in and used iCloud sync, Settings also offers <strong>Delete Account</strong>, which removes your synced library from iCloud and signs you out. Deleting your account does not delete files already downloaded to this specific device; you can delete those the same way as any other file.</p>
+
+  <h2 id="tracking">No advertising or analytics tracking</h2>
+  <p>Docket does not use third-party analytics SDKs, does not show ads, and does not track you across other apps or websites. Docket does not sell or share your data with data brokers or advertisers.</p>
+
+  <h2 id="children">Children's privacy</h2>
+  <p>Docket is not directed at children under 13, and Docket does not knowingly collect personal information from children. Because almost all of Docket's functionality happens entirely on-device, there is minimal data of any kind collected regardless of the user's age.</p>
+
+  <h2 id="changes">Changes to this policy</h2>
+  <p>If this policy changes in a meaningful way, the "Last updated" date at the top of this page will change, and significant changes will be noted in the app's release notes.</p>
+
+  <h2 id="contact">Contact</h2>
+  <p>Questions about this policy or how Docket handles your data can be sent to <a href="mailto:docket.app.support@gmail.com">docket.app.support@gmail.com</a>.</p>
+
+  <footer>Docket is developed independently. This policy describes Docket's own behavior only — it does not cover Apple's own handling of iCloud, Sign in with Apple, StoreKit, or on-device AI, which are governed by Apple's own privacy policy.</footer>
+</div>
+</body>
+</html>
