@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Docket — Privacy Policy</title>
+<title>Docket Privacy Policy</title>
 <style>
   :root {
     --bg: #fbfbfa;
@@ -70,13 +70,13 @@
   <header>
     <div class="kicker">Docket</div>
     <h1>Privacy Policy</h1>
-    <div class="updated">Last updated: September 22, 2026</div>
-    <p class="lede">Docket is built so that almost everything happens on your iPhone, not on a server. This page explains exactly what stays local, what's optional and under your control, and the very few things that ever leave your device.</p>
+    <div class="updated">Last updated: October 21, 2026</div>
+    <p class="lede">Docket is built so that almost everything happens on your iPhone, not on a server. This page explains exactly what stays local, what's optional and under your control, and the few things that leave your device: AI questions you choose to ask, web pages you choose to convert, and iCloud sync if you turn it on.</p>
     <nav class="toc">
       <a href="#documents">Your documents</a>
       <a href="#icloud">iCloud sync</a>
       <a href="#apple-signin">Sign in with Apple</a>
-      <a href="#ai">On-device AI</a>
+      <a href="#ai">AI features</a>
       <a href="#camera-photos">Camera &amp; Photos</a>
       <a href="#calendar">Calendar</a>
       <a href="#applock">Face ID / App Lock</a>
@@ -96,44 +96,54 @@
   <p>Every PDF you scan, convert, or import into Docket is stored locally on your iPhone. Thumbnails, cached search text, and the other small files Docket generates to make the app fast (like OCR text layers and search embeddings) are stored locally alongside it. None of this is uploaded anywhere unless you turn on iCloud sync yourself (see below).</p>
 
   <h2 id="icloud">iCloud sync is optional, and it's your private storage</h2>
-  <p>If you choose to sign in, Docket can sync your library across your own devices using <strong>your personal iCloud private database</strong> — a storage space tied to your Apple ID that Docket's developer cannot access, view, or download from. This uses Apple's CloudKit framework.</p>
+  <p>If you choose to sign in, Docket can sync your library across your own devices using <strong>your personal iCloud private database</strong>, a storage space tied to your Apple ID that Docket's developer cannot access, view, or download from. This uses Apple's CloudKit framework.</p>
   <p>Docket only writes into its own private CloudKit container. It never reads your other iCloud data (Photos, iCloud Drive, Mail, etc.), and it never shares your documents with anyone else's account.</p>
 
   <h2 id="apple-signin">Signing in with Apple</h2>
-  <p>Docket uses <strong>Sign in with Apple</strong> to identify your account for iCloud sync. The first time you sign in, Apple may share your name and email address (or Apple's private relay email, if you chose to hide your email) with Docket — this is used only to show you as signed in and as the identifier for your synced library. Docket does not send this information anywhere beyond your device and your own iCloud account.</p>
+  <p>Docket uses <strong>Sign in with Apple</strong> to identify your account for iCloud sync. The first time you sign in, Apple may share your name and email address (or Apple's private relay email, if you chose to hide your email) with Docket. This is used only to show you as signed in and as the identifier for your synced library. Docket does not send this information anywhere beyond your device and your own iCloud account.</p>
 
-  <h2 id="ai">On-device AI features</h2>
-  <p>Docket's AI tools — Ask AI, Suggest a Name, Redact Sensitive Info, and Writing Tools — run <strong>entirely on your device</strong> using Apple's on-device Foundation Models and Apple Intelligence frameworks. Your document's content is never sent to Docket's developer, Apple's servers, or any third party to power these features. If your device doesn't support on-device AI, these features simply aren't available — Docket does not fall back to a cloud AI service.</p>
+  <h2 id="ai">AI features</h2>
+  <p>Docket has two kinds of AI features, and they handle your content differently.</p>
+  <p><strong>On your device only.</strong> Redact Sensitive Info, Writing Tools, and the automatic file naming that happens when you scan or convert photos all run on your iPhone using Apple's on-device frameworks. Nothing from these features is sent anywhere.</p>
+  <p><strong>Docket AI (Ask AI and Suggest a Name).</strong> When you ask a question with Ask AI, or tap Suggest a Name, Docket sends what's needed to answer to <strong>Docket AI</strong>, our own small service running on <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> Workers AI (an open-source Llama model hosted by Cloudflare). Docket asks for your permission before the first time it does this. What's sent:</p>
+  <ul>
+    <li>Your question, and the file's name.</li>
+    <li>Relevant text from the document you have open (for Suggest a Name, up to the first few thousand characters).</li>
+    <li>For photos, scans, and other files that are mostly images, a reduced picture of the first page, so the AI can see what's in it.</li>
+    <li>A random identifier created when you install Docket. It isn't linked to your name, Apple ID, or device hardware, and it exists only to count your free daily questions.</li>
+  </ul>
+  <p>Docket AI answers the request and <strong>does not store your documents, questions, or answers</strong>. They are not used to train AI models, by us or by Cloudflare. To keep the free service fair, Docket AI keeps two small counters for each day: how many questions your install identifier has asked, and how many have come from your network's IP address. Both counters delete themselves automatically after about a day. Like any web service, Cloudflare also keeps short-lived technical logs (such as time and IP address, never your document content) for a few days to keep the service running and secure.</p>
+  <p>If you'd rather not use Docket AI, simply don't use Ask AI or Suggest a Name. Every other feature works without it.</p>
 
   <h2 id="camera-photos">Camera and Photo Library access</h2>
-  <p>Docket asks for camera access to scan documents, and photo library access to convert an existing photo or screenshot into a PDF. Both are used only at the moment you choose to scan or pick a photo — Docket does not access your camera or photo library in the background, and captured/selected images are processed and stored the same way as any other document in the app (locally, or synced only if you've turned on iCloud sync).</p>
+  <p>Docket asks for camera access to scan documents, and photo library access to convert an existing photo or screenshot into a PDF. Both are used only at the moment you choose to scan or pick a photo. Docket does not access your camera or photo library in the background, and captured/selected images are processed and stored the same way as any other document in the app (locally, or synced only if you've turned on iCloud sync).</p>
 
   <h2 id="calendar">Calendar access</h2>
-  <p>If a PDF you're viewing contains a recognizable date, Docket can offer to create a calendar event from it. This uses Apple's EventKit framework and only writes the one event you explicitly confirm — Docket does not read your existing calendar or its other events.</p>
+  <p>If a PDF you're viewing contains a recognizable date, Docket can offer to create a calendar event from it. This uses Apple's EventKit framework and only writes the one event you explicitly confirm. Docket does not read your existing calendar or its other events.</p>
 
   <h2 id="applock">Face ID and App Lock</h2>
-  <p>If you turn on App Lock in Settings, Docket uses Face ID (or your device passcode) to require authentication before your library is shown. This authentication happens entirely through Apple's LocalAuthentication framework — Docket never receives your Face ID data itself, only a yes/no confirmation from the operating system.</p>
+  <p>If you turn on App Lock in Settings, Docket uses Face ID (or your device passcode) to require authentication before your library is shown. This authentication happens entirely through Apple's LocalAuthentication framework. Docket never receives your Face ID data itself, only a yes/no confirmation from the operating system.</p>
 
   <h2 id="web">Web pages you choose to convert</h2>
-  <p>Docket's "Web to PDF" tool is the one feature that makes a network request: when you type in a URL and tap Convert, Docket loads exactly that page (the same way Safari would) in order to save it as a PDF. No other part of Docket makes network requests to fetch or send your content.</p>
+  <p>When you convert a web page to PDF, either by typing a URL into Docket or by sharing a link to "Save to Docket" from Safari or another app, Docket loads exactly that page (the same way Safari would) in order to save it as a PDF. Apart from this, Docket AI (above), iCloud sync, and App Store purchases, Docket doesn't make network requests to fetch or send your content.</p>
 
   <h2 id="purchases">Subscriptions and purchases</h2>
-  <p>Docket Pro is sold through Apple's App Store using StoreKit. Payment details are handled entirely by Apple — Docket never sees or stores your card information. Docket only receives confirmation of what you've purchased, so it can unlock Pro features on your device.</p>
+  <p>Docket Pro is sold through Apple's App Store using StoreKit. Payment details are handled entirely by Apple. Docket never sees or stores your card information. Docket only receives confirmation of what you've purchased, so it can unlock Pro features on your device.</p>
 
   <h2 id="backups">Device backups</h2>
-  <p>Because your documents are stored in Docket's normal app storage, they're included in your device's standard iCloud or iTunes/Finder backup the same way any other app's data would be — this is Apple's standard backup behavior, not something Docket configures specially.</p>
+  <p>Because your documents are stored in Docket's normal app storage, they're included in your device's standard iCloud or iTunes/Finder backup the same way any other app's data would be. This is Apple's standard backup behavior, not something Docket configures specially.</p>
 
   <h2 id="sharing">Sharing and exporting files</h2>
-  <p>When you use Share, Export, or Print from Docket, you're choosing to hand a copy of that file to another app, another person, or your own Files app — at that point, that copy is outside Docket's control, the same as sharing any other document from your phone. Locking a file with a password inside Docket does not retroactively protect copies you already shared before adding that password.</p>
+  <p>When you use Share, Export, or Print from Docket, you're choosing to hand a copy of that file to another app, another person, or your own Files app. At that point, that copy is outside Docket's control, the same as sharing any other document from your phone. Locking a file with a password inside Docket does not retroactively protect copies you already shared before adding that password.</p>
 
   <h2 id="deletion">Deleting your data</h2>
-  <p>You can delete individual files or your whole library at any time from within Docket — this removes them from your device immediately. If you've signed in and used iCloud sync, Settings also offers <strong>Delete Account</strong>, which removes your synced library from iCloud and signs you out. Deleting your account does not delete files already downloaded to this specific device; you can delete those the same way as any other file.</p>
+  <p>You can delete individual files or your whole library at any time from within Docket. Deleted files first go to Recently Deleted, where you can restore them for 30 days or remove them for good right away. If you've signed in and used iCloud sync, Settings also offers <strong>Delete Account</strong>, which removes your synced library from iCloud and signs you out. Deleting your account does not delete files already downloaded to this specific device; you can delete those the same way as any other file.</p>
 
   <h2 id="tracking">No advertising or analytics tracking</h2>
   <p>Docket does not use third-party analytics SDKs, does not show ads, and does not track you across other apps or websites. Docket does not sell or share your data with data brokers or advertisers.</p>
 
   <h2 id="children">Children's privacy</h2>
-  <p>Docket is not directed at children under 13, and Docket does not knowingly collect personal information from children. Because almost all of Docket's functionality happens entirely on-device, there is minimal data of any kind collected regardless of the user's age.</p>
+  <p>Docket is not directed at children under 13, and Docket does not knowingly collect personal information from children. Because almost all of Docket's functionality happens on-device, very little data of any kind is collected, regardless of the user's age.</p>
 
   <h2 id="changes">Changes to this policy</h2>
   <p>If this policy changes in a meaningful way, the "Last updated" date at the top of this page will change, and significant changes will be noted in the app's release notes.</p>
@@ -141,7 +151,7 @@
   <h2 id="contact">Contact</h2>
   <p>Questions about this policy or how Docket handles your data can be sent to <a href="mailto:docket.app.support@gmail.com">docket.app.support@gmail.com</a>.</p>
 
-  <footer>Docket is developed independently. This policy describes Docket's own behavior only — it does not cover Apple's own handling of iCloud, Sign in with Apple, StoreKit, or on-device AI, which are governed by Apple's own privacy policy.</footer>
+  <footer>Docket is developed independently. This policy describes Docket's own behavior only. It does not cover Apple's own handling of iCloud, Sign in with Apple, StoreKit, or on-device AI, which are governed by Apple's own privacy policy, or Cloudflare's own handling of its network, which is governed by Cloudflare's privacy policy.</footer>
 </div>
 </body>
 </html>
