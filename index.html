@@ -70,7 +70,7 @@
   <header>
     <div class="kicker">Docket</div>
     <h1>Privacy Policy</h1>
-    <div class="updated">Last updated: October 21, 2026</div>
+    <div class="updated">Last updated: November 26, 2026</div>
     <p class="lede">Docket is built so that almost everything happens on your iPhone, not on a server. This page explains exactly what stays local, what's optional and under your control, and the few things that leave your device: AI questions you choose to ask, web pages you choose to convert, and iCloud sync if you turn it on.</p>
     <nav class="toc">
       <a href="#documents">Your documents</a>
@@ -79,6 +79,7 @@
       <a href="#ai">AI features</a>
       <a href="#camera-photos">Camera &amp; Photos</a>
       <a href="#calendar">Calendar</a>
+      <a href="#reminders">Reminders</a>
       <a href="#applock">Face ID / App Lock</a>
       <a href="#web">Web pages you convert</a>
       <a href="#purchases">Subscriptions</a>
@@ -111,15 +112,19 @@
     <li>Relevant text from the document you have open (for Suggest a Name, up to the first few thousand characters).</li>
     <li>For photos, scans, and other files that are mostly images, a reduced picture of the first page, so the AI can see what's in it.</li>
     <li>A random identifier created when you install Docket. It isn't linked to your name, Apple ID, or device hardware, and it exists only to count your free daily questions.</li>
+    <li>If you have Docket Pro, Apple's signed proof of your subscription or purchase (it includes the transaction ID, the product and its expiry date, but no name, email or payment details), so Docket AI can give you the Pro daily allowance. Docket AI checks Apple's signature and does not keep the proof.</li>
   </ul>
-  <p>Docket AI answers the request and <strong>does not store your documents, questions, or answers</strong>. They are not used to train AI models, by us or by Cloudflare. To keep the free service fair, Docket AI keeps two small counters for each day: how many questions your install identifier has asked, and how many have come from your network's IP address. Both counters delete themselves automatically after about a day. Like any web service, Cloudflare also keeps short-lived technical logs (such as time and IP address, never your document content) for a few days to keep the service running and secure.</p>
+  <p>Docket AI answers the request and <strong>does not store your documents, questions, or answers</strong>. They are not used to train AI models, by us or by Cloudflare. To keep the service fair, Docket AI keeps small counters for each day: how many questions your install identifier has asked, how many have come from your network's IP address, and, for Docket Pro, how many have been asked on your purchase's transaction ID. These counters delete themselves automatically after about a day. Like any web service, Cloudflare also keeps short-lived technical logs (such as time and IP address, never your document content) for a few days to keep the service running and secure.</p>
   <p>If you'd rather not use Docket AI, simply don't use Ask AI or Suggest a Name. Every other feature works without it.</p>
 
   <h2 id="camera-photos">Camera and Photo Library access</h2>
   <p>Docket asks for camera access to scan documents, and photo library access to convert an existing photo or screenshot into a PDF. Both are used only at the moment you choose to scan or pick a photo. Docket does not access your camera or photo library in the background, and captured/selected images are processed and stored the same way as any other document in the app (locally, or synced only if you've turned on iCloud sync).</p>
 
   <h2 id="calendar">Calendar access</h2>
-  <p>If a PDF you're viewing contains a recognizable date, Docket can offer to create a calendar event from it. This uses Apple's EventKit framework and only writes the one event you explicitly confirm. Docket does not read your existing calendar or its other events.</p>
+  <p>If a PDF you're viewing contains a recognizable date, Docket can offer to create a calendar event from it. You review the event on Apple's own New Event screen and tap Add yourself. Docket asks only for permission to <em>add</em> events (iOS's write-only calendar access), never to see your calendar, so it cannot read your existing events.</p>
+
+  <h2 id="reminders">Expiry reminders</h2>
+  <p>If you set a reminder for a document, such as a passport, ID card or contract, Docket schedules it as a notification on your iPhone. The date and the reminder stay on this iPhone: they are not sent anywhere or synced. Docket asks for notification permission only when you set a reminder.</p>
 
   <h2 id="applock">Face ID and App Lock</h2>
   <p>If you turn on App Lock in Settings, Docket uses Face ID (or your device passcode) to require authentication before your library is shown. This authentication happens entirely through Apple's LocalAuthentication framework. Docket never receives your Face ID data itself, only a yes/no confirmation from the operating system.</p>
